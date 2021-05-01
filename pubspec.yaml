@@ -1,0 +1,25 @@
+name: photo_manager_migration
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.0
+
+  # The Memory usage does not exceed 300MB.
+  photo_manager: ^0.5.8
+
+  # The Memory usage is close to 1GB and sometimes OOM occurs.
+  #photo_manager: ^0.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
