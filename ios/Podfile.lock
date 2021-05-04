@@ -2,6 +2,7 @@ PODS:
   - Flutter (1.0.0)
   - photo_manager (0.0.1):
     - Flutter
+    - FlutterMacOS
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -14,8 +15,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/photo_manager/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  photo_manager: f7c619c2cc8c2adb8d85c63363babac477de9c67
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  photo_manager: a8db3597a3b44e17ecb331fa099731c99b849496
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 

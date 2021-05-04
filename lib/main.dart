@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
 import 'package:photo_manager_migration/preload_page_view.dart';
@@ -9,7 +11,10 @@ void main() async {
 }
 
 Future<List<AssetEntity>> loadAssets() async {
-  final assetPaths = await PhotoManager.getAssetPathList(onlyAll: true);
+  final assetPaths = await PhotoManager.getAssetPathList(
+    onlyAll: true,
+    type: RequestType.image,
+  );
   if (assetPaths.isNotEmpty) {
     return await assetPaths[0].assetList;
   } else {
@@ -19,8 +24,8 @@ Future<List<AssetEntity>> loadAssets() async {
 
 class MyApp extends StatefulWidget {
   MyApp({
-    Key key,
-    @required this.assets,
+    Key? key,
+    required this.assets,
   }) : super(key: key);
 
   final List<AssetEntity> assets;
@@ -54,13 +59,15 @@ class _MyAppState extends State<MyApp> {
                   itemBuilder: (previewContext, index) {
                     return FutureBuilder(
                       future: widget.assets[index].thumbDataWithSize(
-                        MediaQuery.of(context).size.width.toInt(),
-                        MediaQuery.of(context).size.height.toInt(),
-                      ),
+                        (MediaQuery.of(context).size.width).toInt(),
+                        (MediaQuery.of(context).size.height).toInt(),
+                      ), 
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
+                          final abytes = (snapshot.data as Uint8List);
+                          print('$index : ${abytes.length}');
                           return Image.memory(
-                            snapshot.data,
+                            abytes,
                             fit: BoxFit.cover,
                           );
                         } else {
