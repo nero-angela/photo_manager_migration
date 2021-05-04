@@ -7,7 +7,7 @@ In photo_manager version 0.5.8, the memory usage does not exceed 300MB.
 But version 0.6.0, the memory usage is close to 700MB and sometimes OOM occurs.
 ![0.6.0](https://user-images.githubusercontent.com/26322627/116773848-33266200-aa93-11eb-9ab6-c6369f0fdefc.png)
 
-|0.5.8|0.6.0|
+|v0.5.8|v0.6.0 & v1.1.4|
 |:-:|:-:|
 |fast|slow|
 |<video src="https://user-images.githubusercontent.com/26322627/116774005-4dad0b00-aa94-11eb-866c-f74c1dbc6eb2.MP4" />|<video src="https://user-images.githubusercontent.com/26322627/116774009-57cf0980-aa94-11eb-922b-077edc22d814.MP4"/>|
